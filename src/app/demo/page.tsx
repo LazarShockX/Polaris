@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-export default function Demopage() {
+export default function DemoPage() {
     const [loading, setLoading] = useState(false);
     const [loading2, setLoading2] = useState(false);
 
