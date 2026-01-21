@@ -1,6 +1,6 @@
 import { useRouter } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
-import { AlertCircleIcon, Command, GlobeIcon, Loader2Icon } from "lucide-react";
+import { AlertCircleIcon, GlobeIcon, Loader2Icon } from "lucide-react";
 
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 
