@@ -54,17 +54,19 @@ export const ProjectIdView = ({ projectId }: { projectId: Id<"projects"> }) => {
             </nav>
             <div className="flex-1 relative">
                 <div className={cn(
-                    "absolute inset-0",
-                    activeView === "editor" ? "visible" : "invisible"
-                )}>
+                        "absolute inset-0",
+                        activeView === "editor" ? "visible" : "invisible"
+                    )}
+                >
                     <div>
                         Editor
                     </div>
                 </div>
                 <div className={cn(
-                    "absolute inset-0",
-                    activeView === "preview" ? "visible" : "invisible",
-                )}>
+                        "absolute inset-0",
+                        activeView === "preview" ? "visible" : "invisible",
+                    )}
+                >
                     <div>
                         Preview
                     </div>
