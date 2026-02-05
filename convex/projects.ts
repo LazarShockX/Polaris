@@ -62,7 +62,7 @@ export const getById = query({
         }
 
         if (project.ownerId !== identity.subject) {
-            throw new Error("Unauthorized access to this project");
+            throw new Error("Unauthorized to access to this project");
         }
 
         return project;
@@ -84,7 +84,7 @@ export const rename = mutation({
         }
 
         if (project.ownerId !== identity.subject) {
-            throw new Error("Unauthorized access to this project");
+            throw new Error("Unauthorized to access to this project");
         }
 
         await ctx.db.patch("projects", args.id, {
