@@ -4,7 +4,8 @@ import { FileIcon, FolderIcon } from "@react-symbols/icons/utils";
 
 import { cn } from "@/lib/utils";
 
-import { useCreateFile, useCreateFolder, useDeleteFile, useFolderContents, useRenameFile } from "../../hooks/use-files";
+import { useCreateFile, useCreateFolder, useDeleteFile, useFolderContents, useRenameFile } from "@/features/projects/hooks/use-files";
+import { useEditor } from "@/features/editor/hooks/use-editor";
 
 import { getItemPadding } from "./constants";
 import { CreateInput } from "./create-input";
@@ -23,6 +24,8 @@ export const Tree = ({ item, level = 0, projectId }: { item: Doc<"files">, level
     const createFolder = useCreateFolder();
     const deleteFile = useDeleteFile();
     const renameFile = useRenameFile();
+
+    const { openFile, closeTab, closeAllTabs, activeTabId } = useEditor(projectId);
 
     const folderContents = useFolderContents({
         projectId,
@@ -64,6 +67,7 @@ export const Tree = ({ item, level = 0, projectId }: { item: Doc<"files">, level
 
     if (item.type === "file") {
         const fileName = item.name;
+        const isActive = activeTabId === item._id;
 
         if (isRenaming) {
             return (
@@ -81,13 +85,13 @@ export const Tree = ({ item, level = 0, projectId }: { item: Doc<"files">, level
             <TreeItemWrapper
                 item={item}
                 level={level}
-                isActive={false}
-                onClick={() => {}}
-                onDoubleClick={() => {}}
+                isActive={isActive}
+                onClick={() => openFile(item._id, { pinned: false })}
+                onDoubleClick={() => openFile(item._id, { pinned: true })}
                 onRename={() => setIsRenaming(true)}
                 onDelete={() => {
-                    // Close tab
-                    deleteFile({ id: item._id })
+                    closeTab(item._id);
+                    deleteFile({ id: item._id });
                 }}
             >
                 <FileIcon
@@ -194,8 +198,8 @@ export const Tree = ({ item, level = 0, projectId }: { item: Doc<"files">, level
                 onClick={() => setIsOpen((value) => !value)}
                 onRename={() => setIsRenaming(true)}
                 onDelete={() => {
-                    // Close tab
-                    deleteFile({ id: item._id })
+                    closeAllTabs();
+                    deleteFile({ id: item._id });
                 }}
                 onCreateFile={() => startCreating("file")}
                 onCreateFolder={() => startCreating("folder")}
