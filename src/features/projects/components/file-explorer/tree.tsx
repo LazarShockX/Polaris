@@ -25,7 +25,7 @@ export const Tree = ({ item, level = 0, projectId }: { item: Doc<"files">, level
     const deleteFile = useDeleteFile();
     const renameFile = useRenameFile();
 
-    const { openFile, closeTab, activeTabId } = useEditor(projectId);
+    const { openFile, closeTab, closeAllTabs, activeTabId } = useEditor(projectId);
 
     const folderContents = useFolderContents({
         projectId,
@@ -198,7 +198,8 @@ export const Tree = ({ item, level = 0, projectId }: { item: Doc<"files">, level
                 onClick={() => setIsOpen((value) => !value)}
                 onRename={() => setIsRenaming(true)}
                 onDelete={() => {
-                    deleteFile({ id: item._id })
+                    closeAllTabs();
+                    deleteFile({ id: item._id });
                 }}
                 onCreateFile={() => startCreating("file")}
                 onCreateFolder={() => startCreating("folder")}

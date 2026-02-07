@@ -9,7 +9,7 @@ export const customTheme = EditorView.theme({
         fontFamily: "var(--font-plex-mono), monospace",
         fontSize: "14px",
     },
-    "cm-scroller": {
+    ".cm-scroller": {
         scrollbarWidth: "thin",
         scrollbarColor: "#3f3f46 transparent",
     },

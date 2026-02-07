@@ -42,7 +42,6 @@ export const demoGenerate = inngest.createFunction(
   },
 );
 
-
 export const demoError = inngest.createFunction(
     { id: "demo-error" },
     { event: "demo/error" },
