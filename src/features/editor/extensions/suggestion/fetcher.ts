@@ -37,7 +37,7 @@ export const fetcher = async (payload: SuggestionRequest, signal: AbortSignal): 
         return validatedResponse.suggestion || null;
     } catch (error) {
         if (error instanceof Error && error.name === "AbortError") {
-            return null
+            return null;
         }
         toast.error("Failed to fetch AI completion");
         return null;

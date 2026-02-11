@@ -32,7 +32,7 @@ export const fetcher = async (payload: EditRequest, signal: AbortSignal): Promis
         return validatedResponse.editedCode || null;
     } catch (error) {
         if (error instanceof Error && error.name === "AbortError") {
-            return null
+            return null;
         }
         toast.error("Failed to fetch AI quick edit");
         return null;

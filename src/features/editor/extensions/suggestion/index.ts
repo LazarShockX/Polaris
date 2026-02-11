@@ -149,7 +149,7 @@ const renderPlugin = ViewPlugin.fromClass(
 
         update(update: ViewUpdate) {
             // Rebuild decorations if the suggestion state changed, document changed or cursor moved.
-            // "some" returns true if the callback returns true for any iem.
+            // "some" returns true if the callback returns true for any item.
             const suggestionChanged = update.transactions.some((transaction) =>
                 transaction.effects.some((effect) =>
                     effect.is(setSuggestionEffect)
@@ -176,7 +176,7 @@ const renderPlugin = ViewPlugin.fromClass(
                 return Decoration.none;
             }
 
-            // Create a widget docoration at the cursor position
+            // Create a widget decoration at the cursor position
             const cursor = view.state.selection.main.head;
             return Decoration.set([
                 Decoration.widget({

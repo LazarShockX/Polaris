@@ -5,7 +5,7 @@ import { fetcher } from "./fetcher";
 
 export const showQuickEditEffect = StateEffect.define<boolean>();
 
-let editorView : EditorView | null = null;
+let editorView: EditorView | null = null;
 let currentAbortController: AbortController | null = null;
 
 export const quickEditState = StateField.define<boolean>({
@@ -22,7 +22,7 @@ export const quickEditState = StateField.define<boolean>({
         if (transaction.selection) {
             const selection = transaction.state.selection.main;
             if (selection.empty) {
-                return false
+                return false;
             }
         }
         
@@ -120,7 +120,7 @@ const createQuickEditTooltip = (state: EditorState): readonly Tooltip[] => {
                             selection: {
                                 anchor: selection.from + editedCode.length,
                             },
-                            effects:showQuickEditEffect.of(false),
+                            effects: showQuickEditEffect.of(false),
                         });
                     } else {
                         submitButton.disabled = false;
