@@ -87,7 +87,7 @@ export async function POST(request: Request) {
                 }),
             );
 
-            const validResults = scrapedResults.filter(Boolean);
+            const validResults = scrapedResults.filter(Boolean); // Remove any null results from failed scrapes
 
             if (validResults.length > 0) {
                 documentationContext = `<documentation>\n${validResults.join("\n\n")}\n</documentation>`;
