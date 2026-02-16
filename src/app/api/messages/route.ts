@@ -3,10 +3,10 @@ import { z } from "zod";
 
 import { auth } from "@clerk/nextjs/server";
 import { convex } from "@/lib/convex-client";
+import { inngest } from "@/inngest/client";
 
 import { api } from "../../../../convex/_generated/api";
 import { Id } from "../../../../convex/_generated/dataModel";
-import { inngest } from "@/inngest/client";
 
 const requestSchema = z.object({
     conversationId: z.string(),
@@ -23,6 +23,7 @@ export async function POST(request: Request) {
         );
     }
 
+    // Internal key is needed to query a convex client from Next.js API routes
     const internalKey = process.env.POLARIS_CONVEX_INTERNAL_KEY;
 
     if (!internalKey) {
@@ -48,6 +49,30 @@ export async function POST(request: Request) {
     }
     
     const projectId = conversation.projectId;
+
+    const processingMessages = await convex.query(api.system.getProcessingMessages, {
+        internalKey,
+        projectId: projectId,
+    });
+
+    if (processingMessages.length > 0) {
+        await Promise.all(
+            processingMessages.map(async (msg) => {
+                await inngest.send({
+                    name: "message/cancel",
+                    data: {
+                        messageId: msg._id,
+                    },
+                });
+
+                await convex.mutation(api.system.updateMessageStatus, {
+                    internalKey,
+                    messageId: msg._id,
+                    status: "canceled",
+                });
+            }),
+        );
+    }
 
     await convex.mutation(api.system.createMessage, {
         internalKey,
