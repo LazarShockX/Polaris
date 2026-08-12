@@ -321,7 +321,7 @@ export const createFolder = mutation({
         const existingFile = files.find((file) => file.name === args.name && file.type === "folder");
 
         if (existingFile) {
-            throw new Error("A fodler with the same name already exists in this folder");
+            throw new Error("A folder with the same name already exists in this folder");
         }
 
         const now = Date.now();

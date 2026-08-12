@@ -85,7 +85,7 @@ export const processMessage = inngest.createFunction(
             });
         });
 
-        // Build system prompt with conversation history (exclude the current proccessing message)
+        // Build system prompt with conversation history (exclude the current processing message)
         let systemPrompt = CODING_AGENT_SYSTEM_PROMPT;
 
         // Filter out the current processing message and empty messages
@@ -122,15 +122,15 @@ export const processMessage = inngest.createFunction(
                     ? textMessage.content.trim()
                     : textMessage.content.map((c) => c.text).join("").trim();
                 
-                    if (title) {
-                        await step.run("update-conversation-title", async () => {
-                            await convex.mutation(api.system.updateConversationTitle, {
-                                internalKey,
-                                conversationId,
-                                title,
-                            });
+                if (title) {
+                    await step.run("update-conversation-title", async () => {
+                        await convex.mutation(api.system.updateConversationTitle, {
+                            internalKey,
+                            conversationId,
+                            title,
                         });
-                    }
+                    });
+                }
             }
         }
 
