@@ -8,12 +8,11 @@ import { Message, MessageAction, MessageActions, MessageContent, MessageResponse
 import { PromptInput, PromptInputBody, PromptInputFooter, PromptInputSubmit, PromptInputTextarea, PromptInputTools, type PromptInputMessage } from "@/components/ai-elements/prompt-input";
 import { Button } from "@/components/ui/button";
 
+import { DEFAULT_CONVERSATION_TITLE } from "../constants";
 import { PastConversationDialog } from "./past-conversation-dialog";
-
 import { useConversation, useConversations, useCreateConversation, useMessages } from "../hooks/use-conversations";
 
 import { Id } from "../../../../convex/_generated/dataModel";
-import { DEFAULT_CONVERSATION_TITLE } from "../../../../convex/constants";
 
 interface ConversationSidebarProps {
     projectId: Id<"projects">;
