@@ -39,7 +39,7 @@ export const PreviewView = ({ projectId }: { projectId: Id<"projects">}) => {
                 >
                     <RefreshCwIcon className="size-3" />
                 </Button>
-                <div className="flex-1 h-full flex items-center px-3 bg-background border-x text-xs text text-muted-foreground truncate font-mono">
+                <div className="flex-1 h-full flex items-center px-3 bg-background border-x text-xs text-muted-foreground truncate font-mono">
                     {isLoading && (
                         <div className="flex items-center gap-1.5">
                             <Loader2Icon className="size-3 animate-spin" />
