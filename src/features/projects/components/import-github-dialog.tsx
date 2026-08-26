@@ -49,7 +49,7 @@ export const ImportGithubDialog = ({ open, onOpenChange }: ImportGithubDialogPro
                 onOpenChange(false);
                 form.reset();
     
-                router.push(`projects/${projectId}`)
+                router.push(`/projects/${projectId}`)
             } catch (error) {
                 if (error instanceof HTTPError) {
                     const body = await error.response.json<{ error: string }>();

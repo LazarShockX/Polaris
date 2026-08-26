@@ -26,7 +26,7 @@ export const exportToGithub = inngest.createFunction(
         cancelOn: [
             {
                 event: "github/export.cancel",
-                if: "event.data.projectId == async.data.messageId",
+                if: "event.data.projectId == async.data.projectId",
             },
         ],
         onFailure: async ({ event, step }) => {
@@ -89,7 +89,7 @@ export const exportToGithub = inngest.createFunction(
             const { data: ref } = await octokit.rest.git.getRef({
                 owner: user.login,
                 repo: repoName,
-                ref: "heads/main",
+                ref: "heads/main", // `heads/${report.default_branch}` avoids a hard-coded branch name, but we know it's main because we just created the repo with auto_init
             });
 
             return ref.object.sha;

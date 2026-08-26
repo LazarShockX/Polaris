@@ -52,7 +52,6 @@ export async function POST(request: Request) {
             visibility,
             description,
             githubToken,
-            internalKey,
         },
     });
 
