@@ -22,8 +22,14 @@ export const Tree = ({ item, level = 0, projectId }: { item: Doc<"files">, level
 
     const createFile = useCreateFile();
     const createFolder = useCreateFolder();
-    const deleteFile = useDeleteFile();
-    const renameFile = useRenameFile();
+    const deleteFile = useDeleteFile({
+        projectId,
+        parentId: item.parentId,
+    });
+    const renameFile = useRenameFile({
+        projectId,
+        parentId: item.parentId,
+    });
 
     const { openFile, closeTab, closeAllTabs, activeTabId } = useEditor(projectId);
 
