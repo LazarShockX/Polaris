@@ -4,13 +4,39 @@ Polaris is a browser-based IDE inspired by Cursor AI, combining real-time collab
 
 **Note:** AI features, such as code generation, are unavailable when the associated OpenAI account has insufficient credits.
 
-## Features
+## ✨ Features
+
+### AI-Powered App Building
+- Real-time code suggestions with ghost text
+- Quick edit with Cmd+k to select code and natural language instruction
+- Live preview and read-only terminal
+- Project and conversation history alongside generated code files
+- Credit system with usage tracking
+
+### Editor
+- Syntax highlighting for JS, TS, CSS, HTML, JSON, Markdown, and Python
+- Line numbers and code folding
+- Minimap overview
+- Bracket matching and indentation guides
+- Multi-cursor editing
+
+### File Management
+- File explorer with folder hierarchy
+- CRUD operations for files and folders
+- VSCode-style file icons
+- Tab-based file navigation
+- Auto-save with debouncing
+
+### Real-time
+- Convex-powered instant updates
+- Optimistic mutations
+- Background job processing with Inngest
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 - **Next.js 16** - React framework with App Router
-- **React 19** - x
+- **React 19** - Build interactive UI with reusable components
 - **TypeScript** - Type-safe development
 - **Tailwind CSS** - Utility-first styling
 
@@ -24,7 +50,7 @@ Polaris is a browser-based IDE inspired by Cursor AI, combining real-time collab
 - **One Dark Theme**
 
 ### Execution
-- **WebContainer API** - 
+- **WebContainer API** - Browser-based runtime environment developed by StackBlitz that allows Node.js applications and operating system commands to run directly inside a browser tab
 - **xterm.js** - Enables apps to bring fully-featured terminals to their users in the browser
 
 ### AI
