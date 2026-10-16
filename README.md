@@ -59,6 +59,7 @@ Polaris is a browser-based IDE inspired by Cursor AI, combining real-time collab
 
 ### AI
 - **OpenAI** - Code generation and code suggestions
+- **[AI SDK](https://ai-sdk.dev/)** - Framework-agnostic API by Vercel to connect JS and TS applications to 100+ LLMs and AI providers
 
 ### Auth and Billing
 - **[Clerk](https://clerk.com/)** - Authentication system and subscription billing
