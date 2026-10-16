@@ -1,6 +1,10 @@
-# Polaris - Cursor AI Clone
+# ❄️ Polaris - Cursor AI Clone
 
 Polaris is a browser-based IDE inspired by Cursor AI, combining real-time collaborative code editing with AI-powered development tools. It features intelligent code suggestions and quick edits via Cmd+K, a conversational AI assistant, and in-browser code execution powered by WebContainer. Polaris also supports GitHub import and export, along with multi-file project management for seamless development across entire projects. Check out the app on Vercel: [polaris-gamma-bay.vercel.app/](https://polaris-gamma-bay.vercel.app/)
+
+<p align="center">
+  <img width="1436" height="774" alt="Screenshot 2026-10-16 at 14 39 02" src="https://github.com/user-attachments/assets/617f4727-836b-4cae-98f2-0c5816d9af4d" />
+</p>
 
 **Note:** AI features, such as code generation, are unavailable when the associated OpenAI account has insufficient credits.
 
