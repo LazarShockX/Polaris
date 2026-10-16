@@ -41,17 +41,17 @@ Polaris is a browser-based IDE inspired by Cursor AI, combining real-time collab
 - **Tailwind CSS** - Utility-first styling
 
 ### Backend & Database
-- **Convex** - Real-time DB
-- **Inngest** - Background job processing and agent networks
+- **[Convex](https://www.convex.dev/)** - Real-time DB
+- **[Inngest](https://www.inngest.com/)** - Background job processing and agent networks
 
 ### Editor
-- **CodeMirror** - Code editor component for web browsers that supports syntax highlighting and extensive customization
+- **[CodeMirror](https://codemirror.net/)** - Code editor component for web browsers that supports syntax highlighting and extensive customization
 - **Custom Extensions**
 - **One Dark Theme**
 
 ### Execution
-- **WebContainer API** - Browser-based runtime environment developed by StackBlitz that allows Node.js applications and operating system commands to run directly inside a browser tab
-- **xterm.js** - Enables apps to bring fully-featured terminals to their users in the browser
+- **[WebContainer API](https://webcontainers.io/)** - Browser-based runtime environment developed by StackBlitz that allows Node.js applications and operating system commands to run directly inside a browser tab
+- **[xterm.js](https://xtermjs.org/)** - Frontend component that brings fully-featured terminals to users in the browser
 
 ### AI
 - **OpenAI** - Code generation and code suggestions
@@ -60,8 +60,8 @@ Polaris is a browser-based IDE inspired by Cursor AI, combining real-time collab
 - **[Clerk](https://clerk.com/)** - Authentication system and subscription billing
 
 ### Additional Tools
-- **Firecrawl** - Web scraping tool that turns websites into LLM-ready markdown
-- **Sentry** - Error monitoring tool
+- **[Firecrawl](https://www.firecrawl.dev/)** - Web scraping tool that turns websites into LLM-ready markdown
+- **[Sentry](https://sentry.io/)** - Error monitoring tool
 - **shadcn/ui** - Customizable and reusable components
 - **Tanstack Form** - Form handling and validation
 - **Zod** - TypeScript-first validation library
