@@ -40,3 +40,39 @@ Polaris is a browser-based IDE inspired by Cursor AI, combining real-time collab
 - **Tanstack Form** - Form handling and validation
 - **Zod** - TypeScript-first validation library
 - **Zustand** - Global state management library
+
+## 🚀 Getting Started
+
+### Environment Variables
+
+Create a `.env.local` file with the following variables:
+
+```env
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+# Convex
+NEXT_PUBLIC_CONVEX_URL=
+CONVEX_DEPLOYMENT=
+POLARIS_CONVEX_INTERNAL_KEY=
+
+# AI
+OPENAI_API_KEY=
+
+# Firecrawl (optional)
+FIRECRAWL_API_KEY=
+
+# Sentry (optional)
+SENTRY_AUTH_TOKEN=
+```
+
+### Available Scripts
+
+- `npm install` - Install dependencies
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run start` - Start production server
+- `npx convex dev` - Start Convex development server
+- `npx inngest-cli@latest dev` - Run Inngest Dev Server
