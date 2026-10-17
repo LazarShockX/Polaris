@@ -72,7 +72,7 @@ export async function POST(request: Request) {
             .replace("{textBeforeCursor}", textBeforeCursor);
 
         const { output } = await generateText({
-            model: openai("gpt-4o"),
+            model: openai("gpt-5.4-mini"),
             output: Output.object({ schema: suggestionSchema }),
             prompt,
         });

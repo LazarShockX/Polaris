@@ -30,7 +30,7 @@ export const demoGenerate = inngest.createFunction(
 
     await step.run("generate-text", async () => {
         return await generateText({
-            model: openai("gpt-4o"),
+            model: openai("gpt-5.4-mini"),
             prompt: finalPrompt,
             experimental_telemetry: {
                 isEnabled: true,
