@@ -107,3 +107,33 @@ SENTRY_AUTH_TOKEN=
 - `npm run start` - Start production server
 - `npx convex dev` - Start Convex development server
 - `npx inngest-cli@latest dev` - Run Inngest Dev Server
+
+## 🗂️ Project Structure
+
+```text
+src/
+├── app/                         # Next.js routes, project pages, and API endpoints
+│   ├── api/                     # GitHub, AI messaging, suggestions, and quick-edit routes
+│   └── projects/[projectId]/    # Project workspace route and layout
+├── components/
+│   ├── ai-elements/             # Reusable AI chat, code, terminal, and preview components
+│   └── ui/                      # Shared shadcn/ui and Radix UI primitives
+├── features/
+│   ├── auth/                    # Authentication states and access views
+│   ├── conversations/           # Chat UI, history, and Inngest AI tools
+│   ├── editor/                  # CodeMirror editor, extensions, suggestions, and quick edit
+│   ├── preview/                 # WebContainer preview and terminal
+│   └── projects/                # Project dashboard, file explorer, and GitHub import/export
+├── hooks/                       # Shared React hooks
+├── inngest/                     # Background job client and function registration
+├── lib/                         # Convex client, Firecrawl integration, and utilities
+└── types/                       # Shared TypeScript declarations
+convex/
+├── auth.ts                      # Authentication helpers
+├── conversations.ts             # Conversation queries and mutations
+├── files.ts                     # Project file operations
+├── projects.ts                  # Project queries and mutations
+├── schema.ts                    # Convex data model
+└── system.ts                    # Internal system functions
+public/                          # Static assets and application logos
+```
